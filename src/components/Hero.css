@@ -514,13 +514,19 @@
   .hero-revslider-canvas {
     height: 480px;
     overflow: hidden;
+    position: relative;
   }
   .rs-content-container {
-    padding: 0 16px;
-    max-width: 220px;
+    padding: 0 0 0 16px;
+    margin: 0;
+    max-width: 52%;
+    width: 52%;
     z-index: 25;
     justify-content: center;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
   }
   .rs-layer-tag {
     display: none;
@@ -530,17 +536,19 @@
     line-height: 0.94;
     letter-spacing: -1px;
     margin-bottom: 12px;
-    max-width: 200px;
+    width: 100%;
+    max-width: 100%;
   }
   .rs-layer-subheading {
     font-size: 13px;
     line-height: 1.35;
-    margin-bottom: 22px;
-    max-width: 175px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
     color: #4b5563;
   }
   .rs-video-group {
-    gap: 12px;
+    gap: 10px;
     z-index: 26;
   }
   .rs-play-btn {
@@ -559,10 +567,10 @@
     color: #243344;
     white-space: nowrap;
   }
-  /* Skew shapes for mobile - pushed further to the right edge */
+  /* Skew shapes for mobile - pushed to the right */
   .rs-skew-shape {
     display: block;
-    width: 800px;
+    width: 700px;
     height: 700px;
     top: -50px;
   }
@@ -570,22 +578,23 @@
     display: none;
   }
   .hero-rev-slide.slide-1.active .rs-shape-23 {
-    left: 62%;
+    left: 65%;
     background-color: rgba(244, 192, 59, 0.28);
     z-index: 5;
   }
   .hero-rev-slide.slide-1.active .rs-shape-25 {
-    left: 74%;
+    left: 76%;
     background-color: #f4c03b;
     z-index: 6;
   }
-  /* 3D Man model positioned cleanly on the right half, sized proportionately */
+  /* 3D Man model positioned on right side */
   .rs-man-layer {
     position: absolute;
     left: auto;
-    right: -45px;
+    right: -20px;
     bottom: 0;
     height: 380px;
+    max-width: 55%;
     z-index: 15;
     opacity: 1 !important;
     display: block !important;
@@ -597,6 +606,7 @@
   .rs-man-img {
     height: 100%;
     width: auto;
+    max-width: 100%;
     object-fit: contain;
     object-position: bottom right;
     display: block;
@@ -617,7 +627,7 @@
 
 @keyframes rsManMobileEntry {
   0% {
-    transform: translateX(100px);
+    transform: translateX(60px);
     opacity: 0;
   }
   100% {
@@ -628,36 +638,39 @@
 
 @media (max-width: 480px) {
   .hero-revslider-canvas {
-    height: 460px;
+    height: 440px;
   }
   .rs-content-container {
-    padding: 0 14px;
-    max-width: 205px;
+    padding: 0 0 0 14px;
+    max-width: 53%;
+    width: 53%;
   }
   .rs-layer-heading {
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: -0.5px;
+    margin-bottom: 10px;
   }
   .rs-layer-subheading {
     font-size: 12px;
-    max-width: 165px;
-    margin-bottom: 18px;
+    line-height: 1.3;
+    margin-bottom: 16px;
   }
   .rs-play-btn {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    font-size: 13px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 12px;
   }
   .rs-play-title {
-    font-size: 13px;
+    font-size: 12.5px;
   }
   .rs-man-layer {
-    right: -40px;
+    right: -15px;
     height: 350px;
+    max-width: 54%;
   }
   .hero-rev-slide.slide-1.active .rs-shape-23 {
-    left: 58%;
+    left: 60%;
   }
   .hero-rev-slide.slide-1.active .rs-shape-25 {
     left: 72%;
@@ -666,28 +679,42 @@
 
 @media (max-width: 380px) {
   .hero-revslider-canvas {
-    height: 430px;
+    height: 400px;
   }
   .rs-content-container {
-    padding: 0 12px;
-    max-width: 190px;
+    padding: 0 0 0 10px;
+    max-width: 54%;
+    width: 54%;
   }
   .rs-layer-heading {
-    font-size: 27px;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
   }
   .rs-layer-subheading {
+    font-size: 11px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .rs-play-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 11px;
+  }
+  .rs-play-title {
     font-size: 11.5px;
-    max-width: 155px;
   }
   .rs-man-layer {
-    right: -35px;
-    height: 320px;
+    right: -10px;
+    height: 310px;
+    max-width: 52%;
   }
   .hero-rev-slide.slide-1.active .rs-shape-23 {
     left: 56%;
   }
   .hero-rev-slide.slide-1.active .rs-shape-25 {
-    left: 70%;
+    left: 68%;
   }
 }
 
