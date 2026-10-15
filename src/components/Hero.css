@@ -517,82 +517,89 @@
   }
   .rs-content-container {
     padding: 0 16px;
-    max-width: 250px;
-    z-index: 20;
+    max-width: 220px;
+    z-index: 25;
     justify-content: center;
+    position: relative;
   }
   .rs-layer-tag {
     display: none;
   }
   .rs-layer-heading {
-    font-size: 34px;
+    font-size: 32px;
     line-height: 0.94;
     letter-spacing: -1px;
     margin-bottom: 12px;
+    max-width: 200px;
   }
   .rs-layer-subheading {
     font-size: 13px;
     line-height: 1.35;
-    margin-bottom: 20px;
-    max-width: 195px;
+    margin-bottom: 22px;
+    max-width: 175px;
     color: #4b5563;
   }
   .rs-video-group {
     gap: 12px;
+    z-index: 26;
   }
   .rs-play-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 15px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 14px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.15);
   }
   .rs-play-sub {
     display: none;
   }
   .rs-play-title {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 600;
     color: #243344;
+    white-space: nowrap;
   }
-  /* Skew shapes for mobile */
+  /* Skew shapes for mobile - pushed further to the right edge */
   .rs-skew-shape {
     display: block;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 700px;
+    top: -50px;
   }
-  .rs-shape-24 {
+  .hero-rev-slide.slide-1.active .rs-shape-24 {
     display: none;
   }
-  .rs-shape-23 {
-    left: 54%;
+  .hero-rev-slide.slide-1.active .rs-shape-23 {
+    left: 62%;
     background-color: rgba(244, 192, 59, 0.28);
     z-index: 5;
   }
-  .rs-shape-25 {
-    left: 66%;
+  .hero-rev-slide.slide-1.active .rs-shape-25 {
+    left: 74%;
     background-color: #f4c03b;
     z-index: 6;
   }
-  /* 3D Man model positioned on right, full opacity and scaled */
+  /* 3D Man model positioned cleanly on the right half, sized proportionately */
   .rs-man-layer {
     position: absolute;
     left: auto;
-    right: -25px;
+    right: -45px;
     bottom: 0;
-    height: 400px;
-    z-index: 12;
+    height: 380px;
+    z-index: 15;
     opacity: 1 !important;
     display: block !important;
-    transform: none !important;
+    pointer-events: none;
   }
   .hero-rev-slide.slide-1.active .rs-man-layer {
-    animation: rsManMobileEntry 1.0s cubic-bezier(0.25, 1, 0.5, 1) 0.3s both !important;
+    animation: rsManMobileEntry 0.9s cubic-bezier(0.25, 1, 0.5, 1) 0.2s both !important;
   }
   .rs-man-img {
     height: 100%;
     width: auto;
     object-fit: contain;
     object-position: bottom right;
+    display: block;
   }
   .rs-bullets-wrapper,
   .rs-nav-arrow {
@@ -610,7 +617,7 @@
 
 @keyframes rsManMobileEntry {
   0% {
-    transform: translateX(80px);
+    transform: translateX(100px);
     opacity: 0;
   }
   100% {
@@ -625,24 +632,62 @@
   }
   .rs-content-container {
     padding: 0 14px;
-    max-width: 230px;
+    max-width: 205px;
   }
   .rs-layer-heading {
-    font-size: 32px;
+    font-size: 30px;
+    letter-spacing: -0.5px;
   }
   .rs-layer-subheading {
-    font-size: 12.5px;
-    max-width: 185px;
+    font-size: 12px;
+    max-width: 165px;
+    margin-bottom: 18px;
+  }
+  .rs-play-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 13px;
+  }
+  .rs-play-title {
+    font-size: 13px;
   }
   .rs-man-layer {
-    right: -30px;
-    height: 380px;
+    right: -40px;
+    height: 350px;
   }
-  .rs-shape-23 {
-    left: 50%;
+  .hero-rev-slide.slide-1.active .rs-shape-23 {
+    left: 58%;
   }
-  .rs-shape-25 {
-    left: 64%;
+  .hero-rev-slide.slide-1.active .rs-shape-25 {
+    left: 72%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-revslider-canvas {
+    height: 430px;
+  }
+  .rs-content-container {
+    padding: 0 12px;
+    max-width: 190px;
+  }
+  .rs-layer-heading {
+    font-size: 27px;
+  }
+  .rs-layer-subheading {
+    font-size: 11.5px;
+    max-width: 155px;
+  }
+  .rs-man-layer {
+    right: -35px;
+    height: 320px;
+  }
+  .hero-rev-slide.slide-1.active .rs-shape-23 {
+    left: 56%;
+  }
+  .hero-rev-slide.slide-1.active .rs-shape-25 {
+    left: 70%;
   }
 }
 
