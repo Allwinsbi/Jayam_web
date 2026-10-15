@@ -4,132 +4,150 @@ import './Hero.css';
 const slides = [
   {
     id: 1,
-    type: 'shapes',
-    subtitle: 'Why choose us?',
-    titleLines: ['START', 'NEW', 'PROJECTS'],
-    highlightWord: 'PROJECTS',
-    description: 'Don’t get framed by the competition,\ntrust our solid reputation.',
-    modelImg: 'https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/man-model.png',
-    videoUrl: 'https://www.youtube.com/watch?v=FyS_zcvmUr4'
+    key: 'slide-1'
   },
   {
     id: 2,
-    type: 'banner',
-    bgImg: 'https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/slide-2.jpg',
-    box1: 'Committed to superior quality and results',
-    box2: "We'll get it done, like us there are none",
-    ctaText: 'Free Consultation'
+    key: 'slide-2'
   }
 ];
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 7000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
-  const slide = slides[currentSlide];
-
   return (
-    <div id="home" className="hero-slider-container">
-      {/* Slide 1: Geometric Angle Blocks & Man Model */}
-      <div className={`hero-slide slide-1 ${currentSlide === 0 ? 'active' : ''}`}>
-        {/* Background yellow angled polygons */}
-        <div className="hero-shape hero-shape-1"></div>
-        <div className="hero-shape hero-shape-2"></div>
-        <div className="hero-shape hero-shape-3"></div>
+    <div id="home" className="rev-slider-wrapper">
+      <div className="rev-slider-viewport">
+        {/* ==================== SLIDE 1 ==================== */}
+        <div className={`rev-slide slide-1 ${currentSlide === 0 ? 'active' : ''}`}>
+          {/* Angled Skew Shapes */}
+          <div className="rev-skew-shape skew-1"></div>
+          <div className="rev-skew-shape skew-2"></div>
+          <div className="rev-skew-shape skew-3"></div>
 
-        <div className="container hero-content-container">
-          <div className="hero-left-col">
-            <h1 className="hero-main-title">
-              START<br />
-              NEW<br />
-              <span className="accent-yellow">PROJECTS</span>
-            </h1>
-
-            <p className="hero-desc">
-              Don’t get framed by the competition, <br />
-              trust our solid reputation.
-            </p>
-
-            <div className="hero-video-box">
-              <a
-                href="https://www.youtube.com/watch?v=FyS_zcvmUr4"
-                target="_blank"
-                rel="noreferrer"
-                className="hero-play-btn"
-                aria-label="Play Video"
-              >
-                <i className="fa-solid fa-play"></i>
-              </a>
-              <div className="hero-video-text">
-                <span className="sub">Watch video</span>
-                <span className="main">Why choose us?</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-right-col">
+          {/* Man Model Cutout positioned on the right */}
+          <div className="rev-man-layer">
             <img
               src="https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/man-model.png"
               alt="Construction Professional"
-              className="hero-model-img"
+              className="rev-man-img"
             />
           </div>
-        </div>
-      </div>
 
-      {/* Slide 2: Photo Background with Distinctive Layered Text Badges */}
-      <div 
-        className={`hero-slide slide-2 ${currentSlide === 1 ? 'active' : ''}`}
-        style={{ backgroundImage: `url(https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/slide-2.jpg)` }}
-      >
-        <div className="slide-2-overlay"></div>
-        <div className="container slide-2-content">
-          <div className="slide-2-badge dark-badge">
-            Committed to superior quality and results
-          </div>
-          <div className="slide-2-badge yellow-badge">
-            We'll get it done, like us there are none
-          </div>
-          <a href="#contact" className="btn-primary slide-2-btn">
-            Free Consultation
-          </a>
-        </div>
-      </div>
+          {/* Foreground Content Area */}
+          <div className="container rev-container">
+            <div className="rev-content-block">
+              {/* Badge "Why choose us?" at top left */}
+              <div className="rev-top-badge">
+                Why choose us?
+              </div>
 
-      {/* Slider Navigation Arrows / Dots */}
-      <div className="slider-controls">
-        <button 
-          className="slider-arrow prev" 
+              {/* Main 3-line heading: START NEW PROJECTS */}
+              <h1 className="rev-main-heading">
+                <span>START</span>
+                <span>NEW</span>
+                <span className="gold-text">PROJECTS</span>
+              </h1>
+
+              {/* Tagline / Subtitle */}
+              <p className="rev-subheading">
+                Don’t get framed by the competition, <br />
+                trust our solid reputation.
+              </p>
+
+              {/* Video Play Area */}
+              <div className="rev-video-layer">
+                <button
+                  className="rev-play-button"
+                  onClick={() => setVideoOpen(true)}
+                  aria-label="Watch video"
+                >
+                  <i className="fa-solid fa-play"></i>
+                </button>
+                <div className="rev-video-label" onClick={() => setVideoOpen(true)}>
+                  <span className="rev-video-sub">Watch video</span>
+                  <span className="rev-video-main">Why choose us?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ==================== SLIDE 2 ==================== */}
+        <div 
+          className={`rev-slide slide-2 ${currentSlide === 1 ? 'active' : ''}`}
+          style={{ backgroundImage: `url(https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/slide-2.jpg)` }}
+        >
+          <div className="slide-2-dark-overlay"></div>
+          <div className="container rev-container slide-2-center">
+            {/* Top dark banner: "Committed to superior quality and results" */}
+            <div className="slide-2-badge-dark">
+              Committed to superior quality and results
+            </div>
+
+            {/* Bottom gold banner: "We'll get it done, like us there are none" */}
+            <div className="slide-2-badge-gold">
+              We'll get it done, like us there are none
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          className="rev-arrow rev-prev"
           onClick={() => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)}
           aria-label="Previous Slide"
         >
           <i className="fa-solid fa-chevron-left"></i>
         </button>
-        <button 
-          className="slider-arrow next" 
+        <button
+          className="rev-arrow rev-next"
           onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
           aria-label="Next Slide"
         >
           <i className="fa-solid fa-chevron-right"></i>
         </button>
+
+        {/* Navigation Bullets */}
+        <div className="rev-bullets">
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              className={`rev-bullet ${currentSlide === idx ? 'selected' : ''}`}
+              onClick={() => setCurrentSlide(idx)}
+              aria-label={`Slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="slider-dots">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            className={`slider-dot ${currentSlide === idx ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
-      </div>
+      {/* Video Popup Modal */}
+      {videoOpen && (
+        <div className="video-modal-overlay" onClick={() => setVideoOpen(false)}>
+          <div className="video-modal-box" onClick={(e) => e.stopPropagation()}>
+            <button className="video-modal-close" onClick={() => setVideoOpen(false)} aria-label="Close video">
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+            <div className="video-iframe-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/FyS_zcvmUr4?autoplay=1"
+                title="Why choose us video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
