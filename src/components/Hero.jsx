@@ -22,10 +22,14 @@ export default function Hero() {
           <div className="rs-skew-shape rs-shape-23"></div>
           <div className="rs-skew-shape rs-shape-25"></div>
 
-          {/* Man Model (layer 26) */}
+          {/* Man Model (layer 26) - with local fallback and direct URL */}
           <div className="rs-man-layer">
             <img
-              src="https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/man-model.png"
+              src="/man-model.png"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/man-model.png";
+              }}
               alt="Construction Worker"
               className="rs-man-img"
             />

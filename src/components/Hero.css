@@ -13,7 +13,7 @@
 .hero-revslider-canvas {
   position: relative;
   width: 100%;
-  height: 880px;
+  height: 850px;
   background-color: #ffffff;
   overflow: hidden;
 }
@@ -43,7 +43,7 @@
 }
 
 /* Skewed Shapes:
-   Revolution Slider specifies:
+   Revolution Slider specifics:
    - layer 24 (z:5):  x: 817px, y: -7px, dim: 2000px x 1100px, skewX(-33deg), bg: rgba(244, 192, 59, 0.25)
    - layer 23 (z:11): x: 967px, y: -7px, dim: 2000px x 1100px, skewX(-33deg), bg: rgba(244, 192, 59, 0.25)
    - layer 25 (z:13): x: 1117px, y: -7px, dim: 2000px x 1100px, skewX(-33deg), bg: #f4c03b
@@ -59,19 +59,19 @@
 }
 
 .rs-shape-24 {
-  left: 54%;
+  left: 62%;
   background-color: rgba(244, 192, 59, 0.25);
   z-index: 5;
 }
 
 .rs-shape-23 {
-  left: 64%;
+  left: 72%;
   background-color: rgba(244, 192, 59, 0.25);
   z-index: 11;
 }
 
 .rs-shape-25 {
-  left: 74%;
+  left: 82%;
   background-color: #f4c03b;
   z-index: 13;
 }
@@ -79,17 +79,20 @@
 /* Man Model (layer 26, z:12, centered-right in front of shape 24, behind shape 23/25) */
 .rs-man-layer {
   position: absolute;
-  left: 50%;
-  transform: translateX(-15%);
+  left: 55%;
+  transform: translateX(-20%);
   bottom: 0;
-  height: 820px;
+  height: 800px;
   z-index: 12;
   pointer-events: none;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .rs-man-img {
   height: 100%;
   width: auto;
+  max-width: none;
   object-fit: contain;
   display: block;
 }
@@ -122,7 +125,7 @@
 }
 
 /* Layer 21: START NEW PROJECTS
-   font-family: 'Poppins', 700 bold, size: 80px, line-height: 0.88, color: #243344
+   font-family: 'Poppins', 700 bold, size: 92px, line-height: 0.90, color: #243344
 */
 .rs-layer-heading {
   font-family: 'Poppins', sans-serif;
@@ -384,7 +387,7 @@
   }
   .rs-man-layer {
     height: 680px;
-    transform: translateX(-10%);
+    transform: translateX(-15%);
   }
   .slide-2-ribbon.dark-ribbon {
     font-size: 36px;
@@ -396,63 +399,53 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .hero-revslider-canvas {
-    height: 600px;
+    height: 650px;
   }
   .rs-man-layer {
-    opacity: 0.25;
+    height: 550px;
     left: 60%;
+    transform: translateX(-20%);
+    opacity: 0.85;
   }
   .rs-layer-heading {
-    font-size: 56px;
+    font-size: 58px;
   }
   .rs-layer-subheading {
-    font-size: 18px;
-  }
-  .slide-2-ribbon.dark-ribbon {
-    font-size: 26px;
-    padding: 14px 25px;
-  }
-  .slide-2-ribbon.gold-ribbon {
     font-size: 20px;
-    padding: 12px 25px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-revslider-canvas {
-    height: 520px;
+    height: 580px;
   }
   .rs-skew-shape {
     display: none;
   }
   .rs-man-layer {
-    display: none;
+    opacity: 0.2;
+    right: 0;
+    left: auto;
+    transform: none;
   }
   .rs-content-container {
     padding: 0 20px;
-    text-align: center;
-    align-items: center;
   }
   .rs-layer-heading {
-    font-size: 40px;
-    text-align: center;
+    font-size: 48px;
   }
   .rs-layer-subheading {
-    font-size: 16px;
-    text-align: center;
-  }
-  .rs-play-btn {
-    width: 60px;
-    height: 60px;
-    font-size: 18px;
-  }
-  .rs-play-sub {
-    font-size: 14px;
-  }
-  .rs-play-title {
     font-size: 17px;
+  }
+  .slide-2-ribbon.dark-ribbon {
+    font-size: 24px;
+    padding: 14px 25px;
+  }
+  .slide-2-ribbon.gold-ribbon {
+    font-size: 18px;
+    padding: 12px 25px;
   }
   .rs-nav-arrow {
     display: none;
