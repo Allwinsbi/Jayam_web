@@ -43,10 +43,11 @@
 }
 
 /* Skewed Shapes:
-   Revolution Slider specifics:
-   - layer 24 (z:5):  x: 817px, y: -7px, dim: 2000px x 1100px, skewX(-33deg), bg: rgba(244, 192, 59, 0.25)
-   - layer 23 (z:11): x: 967px, y: -7px, dim: 2000px x 1100px, skewX(-33deg), bg: rgba(244, 192, 59, 0.25)
-   - layer 25 (z:13): x: 1117px, y: -7px, dim: 2000px x 1100px, skewX(-33deg), bg: #f4c03b
+   Revolution Slider specifics (grid 1280px):
+   - layer 24 (z:5):  x: 817px, dim: 2000px x 1100px, skewX(-33deg), bg: rgba(244, 192, 59, 0.25)
+   - layer 23 (z:11): x: 967px, dim: 2000px x 1100px, skewX(-33deg), bg: rgba(244, 192, 59, 0.25)
+   - layer 25 (z:13): x: 1117px, dim: 2000px x 1100px, skewX(-33deg), bg: #f4c03b
+   - layer 26 (z:20): Man model (standing in front of shapes!)
 */
 .rs-skew-shape {
   position: absolute;
@@ -59,31 +60,31 @@
 }
 
 .rs-shape-24 {
-  left: 62%;
+  left: 64%;
   background-color: rgba(244, 192, 59, 0.25);
   z-index: 5;
 }
 
 .rs-shape-23 {
-  left: 72%;
+  left: 74%;
   background-color: rgba(244, 192, 59, 0.25);
-  z-index: 11;
+  z-index: 6;
 }
 
 .rs-shape-25 {
-  left: 82%;
+  left: 84%;
   background-color: #f4c03b;
-  z-index: 13;
+  z-index: 7;
 }
 
-/* Man Model (layer 26, z:12, centered-right in front of shape 24, behind shape 23/25) */
+/* Man Model (layer 26, z:20) - In front of the background skew shapes! */
 .rs-man-layer {
   position: absolute;
-  left: 55%;
-  transform: translateX(-20%);
+  left: 50%;
+  transform: translateX(-15%);
   bottom: 0;
   height: 800px;
-  z-index: 12;
+  z-index: 20;
   pointer-events: none;
   display: block !important;
   visibility: visible !important;
@@ -94,7 +95,7 @@
   width: auto;
   max-width: none;
   object-fit: contain;
-  display: block;
+  display: block !important;
 }
 
 /* Content Container anchored in the 1240px container */
@@ -105,7 +106,7 @@
   margin: 0 auto;
   padding: 0 30px;
   position: relative;
-  z-index: 20;
+  z-index: 25;
   display: flex;
   flex-direction: column;
   justify-content: center;
