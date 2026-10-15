@@ -398,6 +398,11 @@
   .btn-consultation {
     display: none;
   }
+  .mobile-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .mobile-hamburger-btn {
     display: flex;
   }
@@ -410,7 +415,50 @@
   .header-top-bar {
     display: none;
   }
+  .search-wrapper {
+    display: none;
+  }
   .site-logo img {
     width: 170px;
   }
+  .mobile-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mobile-call-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-yellow);
+    color: #243344;
+    font-size: 17px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+  .mobile-call-btn:hover {
+    background-color: #243344;
+    color: var(--primary-yellow);
+  }
+  .mobile-hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #243344;
+    color: var(--primary-yellow);
+    border: none;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .mobile-hamburger-btn:hover {
+    background-color: var(--primary-yellow);
+    color: #243344;
+  }
 }
+

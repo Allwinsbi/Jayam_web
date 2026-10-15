@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <header id="site_header" className={`site-header ${scrolled ? 'is-sticky' : ''}`}>
-      {/* Top Bar */}
+      {/* Top Bar (Hidden on Mobile) */}
       <div className="header-top-bar">
         <div className="container header-top-container">
           <div className="top-bar-left">
@@ -161,14 +161,19 @@ export default function Header() {
               Free Consultation
             </a>
 
-            {/* Mobile Hamburger Button */}
-            <button
-              className="mobile-hamburger-btn"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              <i className={mobileMenuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
-            </button>
+            {/* Mobile Header Buttons: Yellow Call Button + Navy Menu Button */}
+            <div className="mobile-header-buttons">
+              <a href="tel:0018182345678" className="mobile-call-btn" aria-label="Call us">
+                <i className="fa-solid fa-phone"></i>
+              </a>
+              <button
+                className="mobile-hamburger-btn"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+              >
+                <i className={mobileMenuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

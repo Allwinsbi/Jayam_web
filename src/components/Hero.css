@@ -512,37 +512,137 @@
 
 @media (max-width: 768px) {
   .hero-revslider-canvas {
-    height: 580px;
-  }
-  .rs-skew-shape {
-    display: none;
-  }
-  .rs-man-layer {
-    opacity: 0.2;
-    right: 0;
-    left: auto;
-    animation: none !important;
-    transform: none !important;
+    height: 480px;
+    overflow: hidden;
   }
   .rs-content-container {
-    padding: 0 20px;
+    padding: 0 16px;
+    max-width: 250px;
+    z-index: 20;
+    justify-content: center;
+  }
+  .rs-layer-tag {
+    display: none;
   }
   .rs-layer-heading {
-    font-size: 48px;
+    font-size: 34px;
+    line-height: 0.94;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
   }
   .rs-layer-subheading {
-    font-size: 17px;
+    font-size: 13px;
+    line-height: 1.35;
+    margin-bottom: 20px;
+    max-width: 195px;
+    color: #4b5563;
   }
-  .slide-2-ribbon.dark-ribbon {
-    font-size: 24px;
-    padding: 14px 25px;
+  .rs-video-group {
+    gap: 12px;
   }
-  .slide-2-ribbon.gold-ribbon {
-    font-size: 18px;
-    padding: 12px 25px;
+  .rs-play-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
   }
+  .rs-play-sub {
+    display: none;
+  }
+  .rs-play-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #243344;
+  }
+  /* Skew shapes for mobile */
+  .rs-skew-shape {
+    display: block;
+    width: 600px;
+    height: 600px;
+  }
+  .rs-shape-24 {
+    display: none;
+  }
+  .rs-shape-23 {
+    left: 54%;
+    background-color: rgba(244, 192, 59, 0.28);
+    z-index: 5;
+  }
+  .rs-shape-25 {
+    left: 66%;
+    background-color: #f4c03b;
+    z-index: 6;
+  }
+  /* 3D Man model positioned on right, full opacity and scaled */
+  .rs-man-layer {
+    position: absolute;
+    left: auto;
+    right: -25px;
+    bottom: 0;
+    height: 400px;
+    z-index: 12;
+    opacity: 1 !important;
+    display: block !important;
+    transform: none !important;
+  }
+  .hero-rev-slide.slide-1.active .rs-man-layer {
+    animation: rsManMobileEntry 1.0s cubic-bezier(0.25, 1, 0.5, 1) 0.3s both !important;
+  }
+  .rs-man-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom right;
+  }
+  .rs-bullets-wrapper,
   .rs-nav-arrow {
     display: none;
+  }
+  .slide-2-ribbon.dark-ribbon {
+    font-size: 22px;
+    padding: 12px 20px;
+  }
+  .slide-2-ribbon.gold-ribbon {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@keyframes rsManMobileEntry {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-revslider-canvas {
+    height: 460px;
+  }
+  .rs-content-container {
+    padding: 0 14px;
+    max-width: 230px;
+  }
+  .rs-layer-heading {
+    font-size: 32px;
+  }
+  .rs-layer-subheading {
+    font-size: 12.5px;
+    max-width: 185px;
+  }
+  .rs-man-layer {
+    right: -30px;
+    height: 380px;
+  }
+  .rs-shape-23 {
+    left: 50%;
+  }
+  .rs-shape-25 {
+    left: 64%;
   }
 }
 
