@@ -1,138 +1,171 @@
-import React, { useState, useEffect } from 'react';
-import './Hero.css';
+import React, { useEffect, useState } from "react";
+import "./Hero.css";
+
+const SECOND_SLIDE_IMAGE =
+  "https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/slide-2.jpg";
+const MAN_MODEL_IMAGE =
+  "https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/man-model.png";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
 
+  
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 2);
+    const timer = window.setInterval(() => {
+      setCurrentSlide((previous) => (previous + 1) % 2);
     }, 8000);
-    return () => clearInterval(timer);
+
+    return () => window.clearInterval(timer);
   }, []);
 
+  const handlePrev = () => {
+    setCurrentSlide((previous) => (previous === 0 ? 1 : 0));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((previous) => (previous === 0 ? 1 : 0));
+  };
+
   return (
-    <div id="home" className="hero-revslider-wrapper">
+    <section id="home" className="hero-revslider-wrapper" aria-label="Hero Slider">
       <div className="hero-revslider-canvas">
-        {/* ======================= SLIDE 1 ======================= */}
-        <div className={`hero-rev-slide slide-1 ${currentSlide === 0 ? 'active' : ''}`}>
-          {/* Angled Skewed Shapes (layers 24, 23, 25) */}
-          <div className="rs-skew-shape rs-shape-24"></div>
-          <div className="rs-skew-shape rs-shape-23"></div>
-          <div className="rs-skew-shape rs-shape-25"></div>
-
-          {/* Man Model (layer 26) - with local fallback and direct URL */}
-          <div className="rs-man-layer">
-            <img
-              src="/man-model.png"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/man-model.png";
-              }}
-              alt="Construction Worker"
-              className="rs-man-img"
-            />
-          </div>
-
-          {/* Text Content Grid bounded by reference container (1280px) */}
-          <div className="rs-content-container">
-            {/* Top Tag "Why choose us?" (layer 14) */}
-            <div className="rs-layer-tag">
-              Why choose us?
+        
+        <div
+          className={`hero-rev-slide slide-1 ${currentSlide === 0 ? "active" : ""}`}
+          aria-hidden={currentSlide !== 0}
+        >
+          
+          <div className="hero-revslider-grid">
+            
+            <div className="rs-man-layer">
+              <img
+                src="/man-model.png"
+                alt="Construction worker"
+                className="rs-man-img"
+                draggable="false"
+                onError={(event) => {
+                  event.currentTarget.onerror = null;
+                  event.currentTarget.src = MAN_MODEL_IMAGE;
+                }}
+              />
             </div>
 
-            {/* Heading "START NEW PROJECTS" (layer 21) */}
-            <h1 className="rs-layer-heading">
-              <span className="heading-line line-dark">START</span>
-              <span className="heading-line line-dark">NEW</span>
-              <span className="heading-line line-gold">PROJECTS</span>
-            </h1>
+            
+            <div className="rs-skew-shape rs-shape-24" />
+            <div className="rs-skew-shape rs-shape-23" />
+            <div className="rs-skew-shape rs-shape-25" />
 
-            {/* Subtitle "Don't get framed..." (layer 22) */}
-            <p className="rs-layer-subheading">
-              Don’t get framed by the competition, <br />
-              trust our solid reputation.
-            </p>
+            
+            <div className="rs-content-container">
+              <div className="rs-text-block">
+                <h1 className="rs-layer-heading">
+                  <span className="heading-line line-dark">START</span>
+                  <span className="heading-line line-dark">NEW</span>
+                  <span className="heading-line line-gold">PROJECTS</span>
+                </h1>
 
-            {/* Video Play Trigger (layers 9 & 10) */}
-            <div className="rs-video-group" onClick={() => setVideoOpen(true)}>
-              <button className="rs-play-btn" aria-label="Play video">
-                <i className="fa-solid fa-play"></i>
-              </button>
-              <div className="rs-play-text">
-                <span className="rs-play-sub">Watch video</span>
-                <span className="rs-play-title">Why choose us?</span>
+                <p className="rs-layer-subheading">
+                  Don’t get framed by the competition,
+                  <br />
+                  trust our solid reputation.
+                </p>
+
+                
+                <button
+                  type="button"
+                  className="rs-video-group"
+                  onClick={() => setVideoOpen(true)}
+                  aria-label="Watch video: Why choose us?"
+                >
+                  <span className="rs-play-btn" aria-hidden="true">
+                    <span className="rs-play-triangle" />
+                  </span>
+
+                  <span className="rs-play-labels">
+                    <span className="rs-play-sub">Watch video</span>
+                    <span className="rs-play-main">Why choose us?</span>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ======================= SLIDE 2 ======================= */}
-        <div 
-          className={`hero-rev-slide slide-2 ${currentSlide === 1 ? 'active' : ''}`}
-          style={{ backgroundImage: `url(https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/slide-2.jpg)` }}
+        
+        <div
+          className={`hero-rev-slide slide-2 ${currentSlide === 1 ? "active" : ""}`}
+          style={{ backgroundImage: `url("${SECOND_SLIDE_IMAGE}")` }}
+          aria-hidden={currentSlide !== 1}
         >
-          <div className="slide-2-dim-overlay"></div>
+          <div className="slide-2-dim-overlay" />
+
           <div className="slide-2-center-box">
             <div className="slide-2-ribbon dark-ribbon">
               Committed to superior quality and results
             </div>
+
             <div className="slide-2-ribbon gold-ribbon">
-              We'll get it done, like us there are none
+              We&apos;ll get it done, like us there are none
             </div>
           </div>
         </div>
 
-        {/* Slide Controls: Previous / Next */}
-        <button
-          className="rs-nav-arrow rs-arrow-left"
-          onClick={() => setCurrentSlide((currentSlide - 1 + 2) % 2)}
-          aria-label="Previous slide"
-        >
-          <i className="fa-solid fa-chevron-left"></i>
-        </button>
-        <button
-          className="rs-nav-arrow rs-arrow-right"
-          onClick={() => setCurrentSlide((currentSlide + 1) % 2)}
-          aria-label="Next slide"
-        >
-          <i className="fa-solid fa-chevron-right"></i>
-        </button>
+        
+        <div className="rs-arrows-group" aria-label="Slider Navigation">
+          <button
+            type="button"
+            className="rs-nav-arrow rs-arrow-left"
+            onClick={handlePrev}
+            aria-label="Previous slide"
+          >
+            &#10094;
+          </button>
 
-        {/* Bottom Bullets */}
-        <div className="rs-bullets-wrapper">
           <button
-            className={`rs-bullet-dot ${currentSlide === 0 ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(0)}
-            aria-label="Slide 1"
-          />
-          <button
-            className={`rs-bullet-dot ${currentSlide === 1 ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(1)}
-            aria-label="Slide 2"
-          />
+            type="button"
+            className="rs-nav-arrow rs-arrow-right"
+            onClick={handleNext}
+            aria-label="Next slide"
+          >
+            &#10095;
+          </button>
         </div>
       </div>
 
-      {/* Video Modal */}
+      
       {videoOpen && (
-        <div className="video-modal-backdrop" onClick={() => setVideoOpen(false)}>
-          <div className="video-modal-dialog" onClick={(e) => e.stopPropagation()}>
-            <button className="video-modal-close-btn" onClick={() => setVideoOpen(false)} aria-label="Close video">
-              <i className="fa-solid fa-xmark"></i>
+        <div
+          className="video-modal-backdrop"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="video-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Why choose us video"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="video-modal-close-btn"
+              onClick={() => setVideoOpen(false)}
+              aria-label="Close video"
+            >
+              &times;
             </button>
+
             <div className="video-responsive-holder">
               <iframe
                 src="https://www.youtube.com/embed/FyS_zcvmUr4?autoplay=1"
                 title="Why choose us"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

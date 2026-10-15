@@ -80,14 +80,14 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-        {/* Header with watermark */}
+        
         <div className="projects-header-wrapper">
           <span className="watermark-number center">04</span>
           <span className="section-tagline">WE ARE PROFESSIONAL</span>
           <h2 className="section-title">Our latest projects</h2>
         </div>
 
-        {/* Filter Tabs */}
+        
         <div className="projects-filter-bar">
           {filterCategories.map((tab) => (
             <button
@@ -100,7 +100,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        {/* Projects Grid (8 items) */}
+        
         <div className="projects-grid">
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-grid-item">
@@ -128,7 +128,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      
       {modalImage && (
         <div className="lightbox-overlay" onClick={() => setModalImage(null)}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>

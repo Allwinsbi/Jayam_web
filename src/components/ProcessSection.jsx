@@ -26,7 +26,7 @@ export default function ProcessSection() {
   return (
     <section className="process-section">
       <div className="container process-container">
-        {/* Left Column: Image with offset design */}
+        
         <div className="process-image-column">
           <div className="process-image-border"></div>
           <div className="process-image-wrapper">
@@ -38,7 +38,7 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        {/* Right Column: 3 Process Steps */}
+        
         <div className="process-content-column">
           <div className="process-watermark-wrapper">
             <span className="watermark-number">03</span>

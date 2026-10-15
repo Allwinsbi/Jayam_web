@@ -32,42 +32,42 @@ export default function App() {
 
   return (
     <div className="app-root">
-      {/* 1. Header with Top Bar, Nav, Search, Consultation CTA */}
+      
       <Header />
 
       <main>
-        {/* 2. Hero Section with 2 Revolution Slider Slides */}
+        
         <Hero />
 
-        {/* 3. Features At A Glance (Helmet Icon + 3 Flip Cards) */}
+        
         <FeaturesGlance />
 
-        {/* 4. About Our Company (Devoted & Dedicated + Checklist) */}
+        
         <AboutSection />
 
-        {/* 5. What We Can Do For You (Services Cards) */}
+        
         <ServicesSection />
 
-        {/* 6. Process of Construction (How it works + 3 Steps) */}
+        
         <ProcessSection />
 
-        {/* 7. We Are Professional (Latest Projects Gallery + Category Filters + Modal) */}
+        
         <ProjectsSection />
 
-        {/* 8. Interested in Construction? (Request a free quote form) */}
+        
         <QuoteSection />
 
-        {/* 9. See What Says Our Happy Clients (Testimonials Carousel) */}
+        
         <TestimonialsSection />
 
-        {/* 10. Partner Logos Bar */}
+        
         <PartnersSection />
       </main>
 
-      {/* 11. Footer with About text, social links, and sub-footer */}
+      
       <Footer />
 
-      {/* Back to top button */}
+      
       {showScrollTop && (
         <button className="scroll-to-top" onClick={scrollToTop} aria-label="Back to top">
           <i className="fa-solid fa-arrow-up"></i>

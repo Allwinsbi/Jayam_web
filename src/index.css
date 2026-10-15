@@ -116,7 +116,6 @@ button, input, select, textarea {
   color: var(--primary-yellow);
 }
 
-/* Scroll to top button */
 .scroll-to-top {
   position: fixed;
   bottom: 30px;

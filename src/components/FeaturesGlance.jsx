@@ -31,7 +31,7 @@ export default function FeaturesGlance() {
   return (
     <section className="features-glance-section">
       <div className="container">
-        {/* Safety Helmet Icon */}
+        
         <div className="features-icon-header">
           <img
             src="https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/safety-icon.png"
@@ -43,7 +43,7 @@ export default function FeaturesGlance() {
         <span className="section-tagline">FEATURES AT A GLANCE</span>
         <h2 className="section-title light">We know what your needs are</h2>
 
-        {/* 3 Flip Cards */}
+        
         <div className="feature-cards-grid">
           {featureCards.map((card) => (
             <div
@@ -53,7 +53,6 @@ export default function FeaturesGlance() {
               onMouseLeave={() => setFlippedCard(null)}
             >
               <div className="feature-card-inner">
-                {/* Front Side */}
                 <div
                   className="feature-card-front"
                   style={{ backgroundImage: `url(${card.bgImg})` }}
@@ -63,8 +62,6 @@ export default function FeaturesGlance() {
                     <i className="fa-solid fa-chevron-up card-arrow"></i>
                   </div>
                 </div>
-
-                {/* Back Side (Yellow with description) */}
                 <div
                   className="feature-card-back"
                   style={{

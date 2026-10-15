@@ -31,7 +31,6 @@ export default function Header() {
 
   return (
     <header id="site_header" className={`site-header ${scrolled ? 'is-sticky' : ''}`}>
-      {/* Top Bar (Hidden on Mobile) */}
       <div className="header-top-bar">
         <div className="container header-top-container">
           <div className="top-bar-left">
@@ -59,12 +58,9 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-      {/* Main Navigation Bar */}
       <div className="header-main-bar">
         <div className="container header-main-container">
-          {/* Logo */}
-          <div className="site-logo">
+            <div className="site-logo">
             <a href="#" title="Construction 2 WordPress Theme">
               <img
                 src="https://xtratheme.com/elementor/construction-2/wp-content/uploads/sites/41/2020/01/logo-construction.png"
@@ -74,8 +70,6 @@ export default function Header() {
               />
             </a>
           </div>
-
-          {/* Desktop Navigation */}
           <nav className="desktop-nav">
             <ul className="nav-menu">
               <li className="nav-item active">
@@ -118,8 +112,6 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-
-          {/* Right Header Actions */}
           <div className="header-actions">
             <div className="search-wrapper">
               <button
@@ -160,8 +152,6 @@ export default function Header() {
             <a href="#contact" className="btn-consultation">
               Free Consultation
             </a>
-
-            {/* Mobile Header Buttons: Yellow Call Button + Navy Menu Button */}
             <div className="mobile-header-buttons">
               <a href="tel:0018182345678" className="mobile-call-btn" aria-label="Call us">
                 <i className="fa-solid fa-phone"></i>
@@ -177,8 +167,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-      {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
           <div className="mobile-drawer" onClick={(e) => e.stopPropagation()}>

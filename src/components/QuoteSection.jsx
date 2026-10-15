@@ -29,7 +29,7 @@ export default function QuoteSection() {
   return (
     <section id="contact" className="quote-section">
       <div className="container quote-container">
-        {/* Left Dark Column */}
+        
         <div className="quote-left-info">
           <div className="quote-watermark-wrapper">
             <span className="watermark-number left-light">05</span>
@@ -71,7 +71,7 @@ export default function QuoteSection() {
           </div>
         </div>
 
-        {/* Right Yellow Form Column */}
+        
         <div className="quote-form-card">
           {submitted ? (
             <div className="form-success-banner">

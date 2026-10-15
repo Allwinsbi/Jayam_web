@@ -28,17 +28,17 @@ export default function TestimonialsSection() {
   return (
     <section className="testimonials-section">
       <div className="container">
-        {/* Section Header */}
+        
         <div className="testimonials-header-wrapper">
           <span className="watermark-number center">06</span>
           <span className="section-tagline">SEE WHAT SAYS OUR HAPPY CLIENTS</span>
           <h2 className="section-title">Our happy customers</h2>
         </div>
 
-        {/* Testimonials Carousel Box */}
+        
         <div className="testimonial-slider-container">
           <div className="testimonial-card">
-            {/* Avatar with yellow offset shadow */}
+            
             <div className="testimonial-avatar-wrapper">
               <img
                 src={testimonials[currentIdx].avatar}
@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
               />
             </div>
 
-            {/* Content & Quote text */}
+            
             <div className="testimonial-content">
               <i className="fa-solid fa-quote-left testimonial-quote-icon"></i>
               <p className="testimonial-quote-text">
@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Testimonial Dots Navigation */}
+          
           <div className="testimonial-dots">
             {testimonials.map((_, idx) => (
               <button

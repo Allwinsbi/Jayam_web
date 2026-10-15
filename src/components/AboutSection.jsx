@@ -14,7 +14,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="about-section">
       <div className="container about-container">
-        {/* Left Column: Image with yellow backdrop accent */}
+        
         <div className="about-image-column">
           <div className="about-yellow-backdrop"></div>
           <div className="about-image-wrapper">
@@ -25,8 +25,6 @@ export default function AboutSection() {
             />
           </div>
         </div>
-
-        {/* Right Column: Content and 2-column checklist */}
         <div className="about-content-column">
           <div className="about-watermark-wrapper">
             <span className="watermark-number">01</span>

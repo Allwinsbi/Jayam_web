@@ -4,7 +4,6 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer id="site_footer" className="page-footer">
-      {/* Middle Footer: About Company & Social Icons */}
       <div className="middle-footer">
         <div className="container footer-center-content">
           <div className="footer-logo-wrapper">
@@ -38,8 +37,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Bottom Footer: Copyright and Links */}
       <div className="bottom-footer">
         <div className="container bottom-footer-container">
           <div className="bottom-left">

@@ -29,14 +29,14 @@ export default function ServicesSection() {
   return (
     <section id="services" className="services-section">
       <div className="container">
-        {/* Section Header with watermark */}
+        
         <div className="services-header-wrapper">
           <span className="watermark-number center">02</span>
           <span className="section-tagline">WHAT WE CAN DO FOR YOU</span>
           <h2 className="section-title">Our construction services</h2>
         </div>
 
-        {/* 3 Services Cards */}
+        
         <div className="services-grid">
           {services.map((item) => (
             <div key={item.id} className="service-card">
