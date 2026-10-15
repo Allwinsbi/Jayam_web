@@ -1,0 +1,156 @@
+/* About Section */
+.about-section {
+  padding: 160px 0 120px;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left Image with offset yellow backdrop */
+.about-image-column {
+  position: relative;
+}
+
+.about-yellow-backdrop {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  left: -200px;
+  right: 120px;
+  background-color: var(--primary-yellow);
+  z-index: 1;
+}
+
+.about-image-wrapper {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 10px 50px rgba(36, 51, 68, 0.2);
+}
+
+.about-main-image {
+  width: 100%;
+  display: block;
+}
+
+/* Right Content */
+.about-content-column {
+  position: relative;
+}
+
+.about-watermark-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.watermark-number {
+  position: absolute;
+  top: -45px;
+  left: -25px;
+  font-family: var(--font-heading);
+  font-size: 110px;
+  font-weight: 800;
+  color: rgba(244, 192, 59, 0.12);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-tagline.align-left {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.about-heading {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 700;
+  color: #243344;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.about-lead-text {
+  font-size: 17px;
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.about-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 15px;
+  list-style: none;
+}
+
+.about-check-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #243344;
+  transition: transform 0.2s ease;
+}
+
+.about-check-item:hover {
+  transform: translateX(4px);
+}
+
+.check-icon {
+  font-size: 16px;
+  color: var(--primary-yellow);
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.about-check-item:hover .check-icon {
+  background-color: var(--primary-yellow);
+  color: #243344;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 40px;
+  }
+  .about-heading {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 100px 0 70px;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-yellow-backdrop {
+    display: none;
+  }
+  .watermark-number {
+    font-size: 70px;
+    top: -25px;
+  }
+  .about-heading {
+    font-size: 30px;
+  }
+  .about-checklist {
+    grid-template-columns: 1fr;
+  }
+}
